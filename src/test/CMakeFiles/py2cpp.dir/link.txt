@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC   -shared  -o py2cpp.cpython-35m-x86_64-linux-gnu.so CMakeFiles/py2cpp.dir/py2cpp.cpp.o -flto 
