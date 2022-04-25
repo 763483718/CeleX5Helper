@@ -4,7 +4,7 @@
  * @Author: guanzhou
  * @Date: 2021-01-09 02:59:46
  * @LastEditors: guanzhou
- * @LastEditTime: 2022-04-25 00:27:58
+ * @LastEditTime: 2022-04-25 23:54:29
  */
 #include "RecordEventData.hpp"
 
@@ -59,6 +59,7 @@ int RecordEventData::StopRecord()
     clog << __func__ << "\n";
 
     cv::imshow("prompt", mR);
+    cv::waitKey(30);
 
     return State_OK;
 }
@@ -84,12 +85,13 @@ int RecordEventData::setFixedMode()
 int RecordEventData::beginProcess()
 {
     cv::imshow("prompt",mR);
-    // cv::waitKey(0);
+    cv::waitKey(30);
     return State_OK;
 }
 
 int RecordEventData::takeAVideo(int actionNo, int personNo)
 {
+    beginProcess();
     string path = "../bin/dataset/";
     if(actionNo < 10)
     {
@@ -114,7 +116,7 @@ int RecordEventData::takeAVideo(int actionNo, int personNo)
     
     cv::imshow("prompt",mG);
     StartRecord(path);
-    // cv::waitKey(0);
+    cv::waitKey(30);
     // StopRecord();
     
     return State_OK;
