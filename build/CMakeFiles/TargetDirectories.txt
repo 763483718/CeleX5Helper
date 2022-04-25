@@ -1,0 +1,5 @@
+/home/tuto/code/CeleX5Helper/build/CMakeFiles/EventHelper.dir
+/home/tuto/code/CeleX5Helper/build/CMakeFiles/Master.dir
+/home/tuto/code/CeleX5Helper/build/CMakeFiles/edit_cache.dir
+/home/tuto/code/CeleX5Helper/build/CMakeFiles/Slave.dir
+/home/tuto/code/CeleX5Helper/build/CMakeFiles/rebuild_cache.dir

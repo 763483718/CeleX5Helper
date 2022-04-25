@@ -5,7 +5,7 @@
  * @email: guanzhou.cn@gmail.com
  * @Date: 2022-03-28 20:50:08
  * @LastEditors: guanzhou
- * @LastEditTime: 2022-04-18 16:22:25
+ * @LastEditTime: 2022-04-24 23:54:43
  */
 #ifndef RECORD_EVENT_DATA
 #define RECORD_EVENT_DATA
@@ -35,12 +35,13 @@ public:
 
     int process();
 
+    int takeAVideo(int actionNo, int personNo);
 public:
     CeleX5* pCeleX5;
 
 private:
     int beginProcess();
-    int takeAVideo(int actionNo, int personNo);
+    
 
 private:
     vector<string> vecCeleX5Mode;

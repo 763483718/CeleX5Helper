@@ -30,9 +30,19 @@ add_executable(EventHelper ./src/main.cpp ./src/RecordEventData.cpp ./src/fileHe
 target_link_libraries(EventHelper ${CeleX_LIB} ${OpenCV_LIBS})
 
 
-#=================RecordEventData-Stereo
-add_executable(StereoHelper ./src/main-Stereo.cpp ./src/RecordEventData-Stereo.cpp ./src/fileHelper.cpp)
+# #=================RecordEventData-Stereo             支持双事件相机的CeleX5库还未修改成功
+# add_executable(StereoHelper ./src/main-Stereo.cpp ./src/RecordEventData-Stereo.cpp ./src/fileHelper.cpp)
 
-target_link_libraries(StereoHelper ${OpenCV_LIBS})
-target_link_libraries(StereoHelper ${CeleXStereo_LIB})
-target_link_libraries(StereoHelper ${CeleX_CeleDriver_LIB})
+# target_link_libraries(StereoHelper ${OpenCV_LIBS})
+# target_link_libraries(StereoHelper ${CeleXStereo_LIB})
+# target_link_libraries(StereoHelper ${CeleX_CeleDriver_LIB})
+
+
+#=================main-Master
+add_executable(Master ./src/main-Master.cpp ./src/SocketHelper.cpp ./src/RecordEventData.cpp ./src/fileHelper.cpp)
+target_link_libraries(Master ${CeleX_LIB} ${OpenCV_LIBS})
+
+
+#=================main-Slave
+add_executable(Slave ./src/main-Slave.cpp ./src/SocketHelper.cpp ./src/RecordEventData.cpp ./src/fileHelper.cpp)
+target_link_libraries(Slave ${CeleX_LIB} ${OpenCV_LIBS})

@@ -4,7 +4,7 @@
  * @Author: guanzhou
  * @Date: 2021-01-09 02:59:46
  * @LastEditors: guanzhou
- * @LastEditTime: 2022-04-07 20:16:41
+ * @LastEditTime: 2022-04-25 00:27:58
  */
 #include "RecordEventData.hpp"
 
@@ -32,6 +32,7 @@ RecordEventData::RecordEventData(const string fpnFile)
     // mG = cv::imread("../rosgraph.png");
     mR = cv::Mat(cv::Size(500,500),CV_8UC3,cv::Scalar(0,0,255));
     mG = cv::Mat(cv::Size(500,500),CV_8UC3,cv::Scalar(0,255,0));
+    cv::imshow("prompt", mR);
 }
 
 int RecordEventData::StartRecord(const string binFile)
@@ -83,7 +84,7 @@ int RecordEventData::setFixedMode()
 int RecordEventData::beginProcess()
 {
     cv::imshow("prompt",mR);
-    cv::waitKey(0);
+    // cv::waitKey(0);
     return State_OK;
 }
 
@@ -113,8 +114,8 @@ int RecordEventData::takeAVideo(int actionNo, int personNo)
     
     cv::imshow("prompt",mG);
     StartRecord(path);
-    cv::waitKey(0);
-    StopRecord();
+    // cv::waitKey(0);
+    // StopRecord();
     
     return State_OK;
 }

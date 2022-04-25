@@ -122,42 +122,6 @@ void SensorDataObserver::onFrameDataUpdated(CeleX5ProcessedData* pSensorData)
             }
         }
         tick += vecEvent.back().tOffPixelIncreasing;
-
-
-
-
-
-
-
-		// std::vector<EventData> vecEvent;
-		// pCeleX5->getEventDataVector(vecEvent);
-		// cv::Mat matPolarity(800, 1280, CV_8UC1, cv::Scalar::all(128));
-		// int dataSize = vecEvent.size();
-		// int row = 0, col = 0;
-		// for (int i = 0; i < dataSize; i++)
-		// {
-		// 	row = 799 - vecEvent[i].row;
-		// 	col = 1279 - vecEvent[i].col;
-		// 	if (vecEvent[i].polarity == 1)
-		// 	{
-		// 		matPolarity.at<uchar>(row, col) = 255;
-		// 	}
-		// 	else if (vecEvent[i].polarity == -1)
-		// 	{
-		// 		matPolarity.at<uchar>(row, col) = 0;
-		// 	}
-		// 	else
-		// 	{
-		// 		matPolarity.at<uchar>(row, col) = 128;
-		// 	}
-		// }
-		// if (dataSize > 0)
-		// {
-		// 	//cout << "size = " << dataSize << ", t = " << vecEvent[dataSize - 1].t - vecEvent[0].t << endl;
-		// 	//cout << "count1 = " << count1 << ", count2 = " << count2 << ", count3 = " << count3 << endl;
-		// 	cv::imshow("Event Polarity Pic", matPolarity);
-		// 	cv::waitKey(1);
-		// }
 	}
 }
 
