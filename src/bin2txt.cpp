@@ -17,9 +17,9 @@
 #include <fstream>
 
 #include <opencv2/opencv.hpp>
-#include <celex5/celex5.h>
-#include <celex5/celex5datamanager.h>
-#include <celex5/celex5processeddata.h>
+#include "celex5.h"
+#include "celex5datamanager.h"
+#include "celex5processeddata.h"
 
 #ifdef _WIN32
 #include <windows.h>
@@ -29,7 +29,7 @@
 
 #define FPN_PATH    "../Samples/config/FPN_2.txt"
 //#define BIN_FILE    "YOUR_BIN_FILE_PATH.bin"	//your bin file path
-#define BIN_FILE    "/home/tuto/code/recordEventDataSet/bin/dataset/camera1/00/00/1.bin"	//your bin file path
+#define BIN_FILE    "/home/tuto/code/CeleX5Helper/bin/dataset/00/00/0.bin"	//your bin file path
 
 CeleX5 *pCeleX5 = new CeleX5;
 
@@ -39,7 +39,7 @@ public:
 	SensorDataObserver(CX5SensorDataServer* pServer)
 	{
         tick = 0;
-        fOut.open("/home/tuto/code/recordEventDataSet/bin/test.txt", std::ios::trunc | std::ios::in);
+        fOut.open("/home/tuto/code/CeleX5Helper/bin/test.txt", std::ios::trunc | std::ios::in);
 
 		m_pServer = pServer;
 		m_pServer->registerData(this, CeleX5DataManager::CeleX_Frame_Data);

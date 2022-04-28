@@ -5,7 +5,7 @@ Autor: guanzhou
 email: guanzhou.cn@gmail.com
 Date: 2022-03-29 00:26:32
 LastEditors: guanzhou
-LastEditTime: 2022-04-06 21:51:23
+LastEditTime: 2022-04-28 15:28:03
 '''
 from PIL import Image
 import os
@@ -18,7 +18,7 @@ def deleteFolder(folder = './img'):
     print('=='*30)
     pass
 
-def showImg(filePath, ticksPerFrame = 10000000, size = 128): #40000
+def showImg(filePath, ticksPerFrame = 40000000, size = 128): #40000
     beginTick = 0
     countPic = 0
     img = Image.new('RGB',(size,size),(0,0,0))

@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=c++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/tuto/code/CeleX5Helper/./include/CeleX/celex5 -I/home/tuto/code/CeleX5Helper/./include/celex5 -I/home/tuto/code/CeleX5Helper/./include -isystem /usr/local/include -isystem /usr/local/include/opencv 
+CXX_INCLUDES = -I/home/tuto/code/CeleX5Helper/./include/CeleX/celex5 -I/home/tuto/code/CeleX5Helper/./include/Celex -I/home/tuto/code/CeleX5Helper/./include -isystem /usr/local/include -isystem /usr/local/include/opencv 
 

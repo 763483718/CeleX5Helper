@@ -5,7 +5,8 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/include/",
-                "${workspaceFolder}/include/CeleX"
+                "${workspaceFolder}/include/CeleX",
+                "${workspaceFolder}/include/CeleX/celex5"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",

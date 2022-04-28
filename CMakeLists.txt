@@ -11,7 +11,7 @@ set(CeleX_CeleDriver_LIB CeleDriver)
 set(CeleXStereo_LIB CeleXStereo)
 
 include_directories(./include/CeleX/celex5)
-include_directories(./include/celex5)
+include_directories(./include/Celex)
 include_directories(./include)
 include_directories(${OpenCV_INCLUDE_DIRS})
 message(${OpenCV_INCLUDE_DIRS})
@@ -22,6 +22,11 @@ link_directories(./lib)
 
 # #specify the executable directory 
 # set_target_properties(EventHelper PROPERTIES OUTPUT_NAME ./build/EventHelper)
+
+#=================bin2txt
+add_executable(BinHelper ./src/bin2txt.cpp)
+
+target_link_libraries(BinHelper ${CeleX_LIB} ${OpenCV_LIBS})
 
 
 #=================RecordEventData

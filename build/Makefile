@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/tuto/code/CeleX5Helper/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -77,6 +66,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -109,6 +109,19 @@ preinstall/fast:
 depend:
 	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+#=============================================================================
+# Target rules for targets named BinHelper
+
+# Build rule for target.
+BinHelper: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 BinHelper
+.PHONY : BinHelper
+
+# fast build rule for target.
+BinHelper/fast:
+	$(MAKE) -f CMakeFiles/BinHelper.dir/build.make CMakeFiles/BinHelper.dir/build
+.PHONY : BinHelper/fast
 
 #=============================================================================
 # Target rules for targets named EventHelper
@@ -211,6 +224,33 @@ src/SocketHelper.cpp.s:
 	$(MAKE) -f CMakeFiles/Master.dir/build.make CMakeFiles/Master.dir/src/SocketHelper.cpp.s
 	$(MAKE) -f CMakeFiles/Slave.dir/build.make CMakeFiles/Slave.dir/src/SocketHelper.cpp.s
 .PHONY : src/SocketHelper.cpp.s
+
+src/bin2txt.o: src/bin2txt.cpp.o
+
+.PHONY : src/bin2txt.o
+
+# target to build an object file
+src/bin2txt.cpp.o:
+	$(MAKE) -f CMakeFiles/BinHelper.dir/build.make CMakeFiles/BinHelper.dir/src/bin2txt.cpp.o
+.PHONY : src/bin2txt.cpp.o
+
+src/bin2txt.i: src/bin2txt.cpp.i
+
+.PHONY : src/bin2txt.i
+
+# target to preprocess a source file
+src/bin2txt.cpp.i:
+	$(MAKE) -f CMakeFiles/BinHelper.dir/build.make CMakeFiles/BinHelper.dir/src/bin2txt.cpp.i
+.PHONY : src/bin2txt.cpp.i
+
+src/bin2txt.s: src/bin2txt.cpp.s
+
+.PHONY : src/bin2txt.s
+
+# target to generate assembly for a file
+src/bin2txt.cpp.s:
+	$(MAKE) -f CMakeFiles/BinHelper.dir/build.make CMakeFiles/BinHelper.dir/src/bin2txt.cpp.s
+.PHONY : src/bin2txt.cpp.s
 
 src/fileHelper.o: src/fileHelper.cpp.o
 
@@ -332,17 +372,21 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... rebuild_cache"
+	@echo "... BinHelper"
 	@echo "... EventHelper"
 	@echo "... Master"
 	@echo "... edit_cache"
 	@echo "... Slave"
-	@echo "... rebuild_cache"
 	@echo "... src/RecordEventData.o"
 	@echo "... src/RecordEventData.i"
 	@echo "... src/RecordEventData.s"
 	@echo "... src/SocketHelper.o"
 	@echo "... src/SocketHelper.i"
 	@echo "... src/SocketHelper.s"
+	@echo "... src/bin2txt.o"
+	@echo "... src/bin2txt.i"
+	@echo "... src/bin2txt.s"
 	@echo "... src/fileHelper.o"
 	@echo "... src/fileHelper.i"
 	@echo "... src/fileHelper.s"
