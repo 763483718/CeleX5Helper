@@ -51,3 +51,11 @@ target_link_libraries(Master ${CeleX_LIB} ${OpenCV_LIBS})
 #=================main-Slave
 add_executable(Slave ./src/main-Slave.cpp ./src/SocketHelper.cpp ./src/RecordEventData.cpp ./src/fileHelper.cpp)
 target_link_libraries(Slave ${CeleX_LIB} ${OpenCV_LIBS})
+
+
+#=================test
+add_executable(testSlave ./src/test-Slave.cpp ./src/RecordEventData.cpp ./src/fileHelper.cpp ./src/SocketHelper.cpp)
+target_link_libraries(testSlave ${CeleX_LIB} ${OpenCV_LIBS})
+
+add_executable(testMaster ./src/test-Master.cpp ./src/RecordEventData.cpp ./src/fileHelper.cpp ./src/SocketHelper.cpp)
+target_link_libraries(testMaster ${CeleX_LIB} ${OpenCV_LIBS})

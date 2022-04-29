@@ -1,6 +1,46 @@
 [
 {
   "directory": "/home/tuto/code/CeleX5Helper/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-5    -I/home/tuto/code/CeleX5Helper/./include/CeleX/celex5 -I/home/tuto/code/CeleX5Helper/./include/Celex -I/home/tuto/code/CeleX5Helper/./include -isystem /usr/local/include -isystem /usr/local/include/opencv  -g   -std=c++11 -o CMakeFiles/testMaster.dir/src/test-Master.cpp.o -c /home/tuto/code/CeleX5Helper/src/test-Master.cpp",
+  "file": "/home/tuto/code/CeleX5Helper/src/test-Master.cpp"
+},
+{
+  "directory": "/home/tuto/code/CeleX5Helper/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-5    -I/home/tuto/code/CeleX5Helper/./include/CeleX/celex5 -I/home/tuto/code/CeleX5Helper/./include/Celex -I/home/tuto/code/CeleX5Helper/./include -isystem /usr/local/include -isystem /usr/local/include/opencv  -g   -std=c++11 -o CMakeFiles/testMaster.dir/src/RecordEventData.cpp.o -c /home/tuto/code/CeleX5Helper/src/RecordEventData.cpp",
+  "file": "/home/tuto/code/CeleX5Helper/src/RecordEventData.cpp"
+},
+{
+  "directory": "/home/tuto/code/CeleX5Helper/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-5    -I/home/tuto/code/CeleX5Helper/./include/CeleX/celex5 -I/home/tuto/code/CeleX5Helper/./include/Celex -I/home/tuto/code/CeleX5Helper/./include -isystem /usr/local/include -isystem /usr/local/include/opencv  -g   -std=c++11 -o CMakeFiles/testMaster.dir/src/fileHelper.cpp.o -c /home/tuto/code/CeleX5Helper/src/fileHelper.cpp",
+  "file": "/home/tuto/code/CeleX5Helper/src/fileHelper.cpp"
+},
+{
+  "directory": "/home/tuto/code/CeleX5Helper/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-5    -I/home/tuto/code/CeleX5Helper/./include/CeleX/celex5 -I/home/tuto/code/CeleX5Helper/./include/Celex -I/home/tuto/code/CeleX5Helper/./include -isystem /usr/local/include -isystem /usr/local/include/opencv  -g   -std=c++11 -o CMakeFiles/testMaster.dir/src/SocketHelper.cpp.o -c /home/tuto/code/CeleX5Helper/src/SocketHelper.cpp",
+  "file": "/home/tuto/code/CeleX5Helper/src/SocketHelper.cpp"
+},
+{
+  "directory": "/home/tuto/code/CeleX5Helper/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-5    -I/home/tuto/code/CeleX5Helper/./include/CeleX/celex5 -I/home/tuto/code/CeleX5Helper/./include/Celex -I/home/tuto/code/CeleX5Helper/./include -isystem /usr/local/include -isystem /usr/local/include/opencv  -g   -std=c++11 -o CMakeFiles/testSlave.dir/src/test-Slave.cpp.o -c /home/tuto/code/CeleX5Helper/src/test-Slave.cpp",
+  "file": "/home/tuto/code/CeleX5Helper/src/test-Slave.cpp"
+},
+{
+  "directory": "/home/tuto/code/CeleX5Helper/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-5    -I/home/tuto/code/CeleX5Helper/./include/CeleX/celex5 -I/home/tuto/code/CeleX5Helper/./include/Celex -I/home/tuto/code/CeleX5Helper/./include -isystem /usr/local/include -isystem /usr/local/include/opencv  -g   -std=c++11 -o CMakeFiles/testSlave.dir/src/RecordEventData.cpp.o -c /home/tuto/code/CeleX5Helper/src/RecordEventData.cpp",
+  "file": "/home/tuto/code/CeleX5Helper/src/RecordEventData.cpp"
+},
+{
+  "directory": "/home/tuto/code/CeleX5Helper/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-5    -I/home/tuto/code/CeleX5Helper/./include/CeleX/celex5 -I/home/tuto/code/CeleX5Helper/./include/Celex -I/home/tuto/code/CeleX5Helper/./include -isystem /usr/local/include -isystem /usr/local/include/opencv  -g   -std=c++11 -o CMakeFiles/testSlave.dir/src/fileHelper.cpp.o -c /home/tuto/code/CeleX5Helper/src/fileHelper.cpp",
+  "file": "/home/tuto/code/CeleX5Helper/src/fileHelper.cpp"
+},
+{
+  "directory": "/home/tuto/code/CeleX5Helper/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-5    -I/home/tuto/code/CeleX5Helper/./include/CeleX/celex5 -I/home/tuto/code/CeleX5Helper/./include/Celex -I/home/tuto/code/CeleX5Helper/./include -isystem /usr/local/include -isystem /usr/local/include/opencv  -g   -std=c++11 -o CMakeFiles/testSlave.dir/src/SocketHelper.cpp.o -c /home/tuto/code/CeleX5Helper/src/SocketHelper.cpp",
+  "file": "/home/tuto/code/CeleX5Helper/src/SocketHelper.cpp"
+},
+{
+  "directory": "/home/tuto/code/CeleX5Helper/build",
   "command": "/usr/bin/x86_64-linux-gnu-g++-5    -I/home/tuto/code/CeleX5Helper/./include/CeleX/celex5 -I/home/tuto/code/CeleX5Helper/./include/Celex -I/home/tuto/code/CeleX5Helper/./include -isystem /usr/local/include -isystem /usr/local/include/opencv  -g   -std=c++11 -o CMakeFiles/BinHelper.dir/src/bin2txt.cpp.o -c /home/tuto/code/CeleX5Helper/src/bin2txt.cpp",
   "file": "/home/tuto/code/CeleX5Helper/src/bin2txt.cpp"
 },

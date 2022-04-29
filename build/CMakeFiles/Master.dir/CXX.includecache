@@ -115,10 +115,6 @@ string
 -
 SocketHelper.hpp
 /home/tuto/code/CeleX5Helper/src/SocketHelper.hpp
-string
--
-iostream
--
 
 /usr/local/include/opencv/cxcore.h
 opencv2/core/core_c.h

@@ -111,6 +111,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named testMaster
+
+# Build rule for target.
+testMaster: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testMaster
+.PHONY : testMaster
+
+# fast build rule for target.
+testMaster/fast:
+	$(MAKE) -f CMakeFiles/testMaster.dir/build.make CMakeFiles/testMaster.dir/build
+.PHONY : testMaster/fast
+
+#=============================================================================
+# Target rules for targets named testSlave
+
+# Build rule for target.
+testSlave: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testSlave
+.PHONY : testSlave
+
+# fast build rule for target.
+testSlave/fast:
+	$(MAKE) -f CMakeFiles/testSlave.dir/build.make CMakeFiles/testSlave.dir/build
+.PHONY : testSlave/fast
+
+#=============================================================================
 # Target rules for targets named BinHelper
 
 # Build rule for target.
@@ -168,6 +194,8 @@ src/RecordEventData.o: src/RecordEventData.cpp.o
 
 # target to build an object file
 src/RecordEventData.cpp.o:
+	$(MAKE) -f CMakeFiles/testMaster.dir/build.make CMakeFiles/testMaster.dir/src/RecordEventData.cpp.o
+	$(MAKE) -f CMakeFiles/testSlave.dir/build.make CMakeFiles/testSlave.dir/src/RecordEventData.cpp.o
 	$(MAKE) -f CMakeFiles/EventHelper.dir/build.make CMakeFiles/EventHelper.dir/src/RecordEventData.cpp.o
 	$(MAKE) -f CMakeFiles/Master.dir/build.make CMakeFiles/Master.dir/src/RecordEventData.cpp.o
 	$(MAKE) -f CMakeFiles/Slave.dir/build.make CMakeFiles/Slave.dir/src/RecordEventData.cpp.o
@@ -179,6 +207,8 @@ src/RecordEventData.i: src/RecordEventData.cpp.i
 
 # target to preprocess a source file
 src/RecordEventData.cpp.i:
+	$(MAKE) -f CMakeFiles/testMaster.dir/build.make CMakeFiles/testMaster.dir/src/RecordEventData.cpp.i
+	$(MAKE) -f CMakeFiles/testSlave.dir/build.make CMakeFiles/testSlave.dir/src/RecordEventData.cpp.i
 	$(MAKE) -f CMakeFiles/EventHelper.dir/build.make CMakeFiles/EventHelper.dir/src/RecordEventData.cpp.i
 	$(MAKE) -f CMakeFiles/Master.dir/build.make CMakeFiles/Master.dir/src/RecordEventData.cpp.i
 	$(MAKE) -f CMakeFiles/Slave.dir/build.make CMakeFiles/Slave.dir/src/RecordEventData.cpp.i
@@ -190,6 +220,8 @@ src/RecordEventData.s: src/RecordEventData.cpp.s
 
 # target to generate assembly for a file
 src/RecordEventData.cpp.s:
+	$(MAKE) -f CMakeFiles/testMaster.dir/build.make CMakeFiles/testMaster.dir/src/RecordEventData.cpp.s
+	$(MAKE) -f CMakeFiles/testSlave.dir/build.make CMakeFiles/testSlave.dir/src/RecordEventData.cpp.s
 	$(MAKE) -f CMakeFiles/EventHelper.dir/build.make CMakeFiles/EventHelper.dir/src/RecordEventData.cpp.s
 	$(MAKE) -f CMakeFiles/Master.dir/build.make CMakeFiles/Master.dir/src/RecordEventData.cpp.s
 	$(MAKE) -f CMakeFiles/Slave.dir/build.make CMakeFiles/Slave.dir/src/RecordEventData.cpp.s
@@ -201,6 +233,8 @@ src/SocketHelper.o: src/SocketHelper.cpp.o
 
 # target to build an object file
 src/SocketHelper.cpp.o:
+	$(MAKE) -f CMakeFiles/testMaster.dir/build.make CMakeFiles/testMaster.dir/src/SocketHelper.cpp.o
+	$(MAKE) -f CMakeFiles/testSlave.dir/build.make CMakeFiles/testSlave.dir/src/SocketHelper.cpp.o
 	$(MAKE) -f CMakeFiles/Master.dir/build.make CMakeFiles/Master.dir/src/SocketHelper.cpp.o
 	$(MAKE) -f CMakeFiles/Slave.dir/build.make CMakeFiles/Slave.dir/src/SocketHelper.cpp.o
 .PHONY : src/SocketHelper.cpp.o
@@ -211,6 +245,8 @@ src/SocketHelper.i: src/SocketHelper.cpp.i
 
 # target to preprocess a source file
 src/SocketHelper.cpp.i:
+	$(MAKE) -f CMakeFiles/testMaster.dir/build.make CMakeFiles/testMaster.dir/src/SocketHelper.cpp.i
+	$(MAKE) -f CMakeFiles/testSlave.dir/build.make CMakeFiles/testSlave.dir/src/SocketHelper.cpp.i
 	$(MAKE) -f CMakeFiles/Master.dir/build.make CMakeFiles/Master.dir/src/SocketHelper.cpp.i
 	$(MAKE) -f CMakeFiles/Slave.dir/build.make CMakeFiles/Slave.dir/src/SocketHelper.cpp.i
 .PHONY : src/SocketHelper.cpp.i
@@ -221,6 +257,8 @@ src/SocketHelper.s: src/SocketHelper.cpp.s
 
 # target to generate assembly for a file
 src/SocketHelper.cpp.s:
+	$(MAKE) -f CMakeFiles/testMaster.dir/build.make CMakeFiles/testMaster.dir/src/SocketHelper.cpp.s
+	$(MAKE) -f CMakeFiles/testSlave.dir/build.make CMakeFiles/testSlave.dir/src/SocketHelper.cpp.s
 	$(MAKE) -f CMakeFiles/Master.dir/build.make CMakeFiles/Master.dir/src/SocketHelper.cpp.s
 	$(MAKE) -f CMakeFiles/Slave.dir/build.make CMakeFiles/Slave.dir/src/SocketHelper.cpp.s
 .PHONY : src/SocketHelper.cpp.s
@@ -258,6 +296,8 @@ src/fileHelper.o: src/fileHelper.cpp.o
 
 # target to build an object file
 src/fileHelper.cpp.o:
+	$(MAKE) -f CMakeFiles/testMaster.dir/build.make CMakeFiles/testMaster.dir/src/fileHelper.cpp.o
+	$(MAKE) -f CMakeFiles/testSlave.dir/build.make CMakeFiles/testSlave.dir/src/fileHelper.cpp.o
 	$(MAKE) -f CMakeFiles/EventHelper.dir/build.make CMakeFiles/EventHelper.dir/src/fileHelper.cpp.o
 	$(MAKE) -f CMakeFiles/Master.dir/build.make CMakeFiles/Master.dir/src/fileHelper.cpp.o
 	$(MAKE) -f CMakeFiles/Slave.dir/build.make CMakeFiles/Slave.dir/src/fileHelper.cpp.o
@@ -269,6 +309,8 @@ src/fileHelper.i: src/fileHelper.cpp.i
 
 # target to preprocess a source file
 src/fileHelper.cpp.i:
+	$(MAKE) -f CMakeFiles/testMaster.dir/build.make CMakeFiles/testMaster.dir/src/fileHelper.cpp.i
+	$(MAKE) -f CMakeFiles/testSlave.dir/build.make CMakeFiles/testSlave.dir/src/fileHelper.cpp.i
 	$(MAKE) -f CMakeFiles/EventHelper.dir/build.make CMakeFiles/EventHelper.dir/src/fileHelper.cpp.i
 	$(MAKE) -f CMakeFiles/Master.dir/build.make CMakeFiles/Master.dir/src/fileHelper.cpp.i
 	$(MAKE) -f CMakeFiles/Slave.dir/build.make CMakeFiles/Slave.dir/src/fileHelper.cpp.i
@@ -280,6 +322,8 @@ src/fileHelper.s: src/fileHelper.cpp.s
 
 # target to generate assembly for a file
 src/fileHelper.cpp.s:
+	$(MAKE) -f CMakeFiles/testMaster.dir/build.make CMakeFiles/testMaster.dir/src/fileHelper.cpp.s
+	$(MAKE) -f CMakeFiles/testSlave.dir/build.make CMakeFiles/testSlave.dir/src/fileHelper.cpp.s
 	$(MAKE) -f CMakeFiles/EventHelper.dir/build.make CMakeFiles/EventHelper.dir/src/fileHelper.cpp.s
 	$(MAKE) -f CMakeFiles/Master.dir/build.make CMakeFiles/Master.dir/src/fileHelper.cpp.s
 	$(MAKE) -f CMakeFiles/Slave.dir/build.make CMakeFiles/Slave.dir/src/fileHelper.cpp.s
@@ -366,6 +410,60 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/EventHelper.dir/build.make CMakeFiles/EventHelper.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/test-Master.o: src/test-Master.cpp.o
+
+.PHONY : src/test-Master.o
+
+# target to build an object file
+src/test-Master.cpp.o:
+	$(MAKE) -f CMakeFiles/testMaster.dir/build.make CMakeFiles/testMaster.dir/src/test-Master.cpp.o
+.PHONY : src/test-Master.cpp.o
+
+src/test-Master.i: src/test-Master.cpp.i
+
+.PHONY : src/test-Master.i
+
+# target to preprocess a source file
+src/test-Master.cpp.i:
+	$(MAKE) -f CMakeFiles/testMaster.dir/build.make CMakeFiles/testMaster.dir/src/test-Master.cpp.i
+.PHONY : src/test-Master.cpp.i
+
+src/test-Master.s: src/test-Master.cpp.s
+
+.PHONY : src/test-Master.s
+
+# target to generate assembly for a file
+src/test-Master.cpp.s:
+	$(MAKE) -f CMakeFiles/testMaster.dir/build.make CMakeFiles/testMaster.dir/src/test-Master.cpp.s
+.PHONY : src/test-Master.cpp.s
+
+src/test-Slave.o: src/test-Slave.cpp.o
+
+.PHONY : src/test-Slave.o
+
+# target to build an object file
+src/test-Slave.cpp.o:
+	$(MAKE) -f CMakeFiles/testSlave.dir/build.make CMakeFiles/testSlave.dir/src/test-Slave.cpp.o
+.PHONY : src/test-Slave.cpp.o
+
+src/test-Slave.i: src/test-Slave.cpp.i
+
+.PHONY : src/test-Slave.i
+
+# target to preprocess a source file
+src/test-Slave.cpp.i:
+	$(MAKE) -f CMakeFiles/testSlave.dir/build.make CMakeFiles/testSlave.dir/src/test-Slave.cpp.i
+.PHONY : src/test-Slave.cpp.i
+
+src/test-Slave.s: src/test-Slave.cpp.s
+
+.PHONY : src/test-Slave.s
+
+# target to generate assembly for a file
+src/test-Slave.cpp.s:
+	$(MAKE) -f CMakeFiles/testSlave.dir/build.make CMakeFiles/testSlave.dir/src/test-Slave.cpp.s
+.PHONY : src/test-Slave.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -373,6 +471,8 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... testMaster"
+	@echo "... testSlave"
 	@echo "... BinHelper"
 	@echo "... EventHelper"
 	@echo "... Master"
@@ -399,6 +499,12 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/test-Master.o"
+	@echo "... src/test-Master.i"
+	@echo "... src/test-Master.s"
+	@echo "... src/test-Slave.o"
+	@echo "... src/test-Slave.i"
+	@echo "... src/test-Slave.s"
 .PHONY : help
 
 

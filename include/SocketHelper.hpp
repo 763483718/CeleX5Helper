@@ -5,7 +5,7 @@
  * @email: guanzhou.cn@gmail.com
  * @Date: 2022-04-20 23:12:45
  * @LastEditors: guanzhou
- * @LastEditTime: 2022-04-25 22:34:05
+ * @LastEditTime: 2022-04-29 19:18:06
  */
 
 #include<stdio.h>
@@ -42,7 +42,7 @@ protected:
 class ClientHelper : SocketHelper
 {
 public:
-    ClientHelper(){}
+    ClientHelper(){mSockfd = -1;}
     ClientHelper(string ip, int port):SocketHelper(ip, port){}
     int connection();
     int connection(string ip, int port);
@@ -53,14 +53,15 @@ public:
     ~ClientHelper();
 private:
     int connectionSerive(sockaddr_in &servaddr, int &sockfd);
-    int sendDataSerive(sockaddr_in addr, const char* buffer, int size);
+    int sendDataSerive(int sockfd, const char* buffer, int size);
 
     int mSockfd;
 
     vector<int> mVecPort;
     vector<string> mVecIp;
-    vector<struct sockaddr_in> mVecAddr;
+    // vector<struct sockaddr_in> mVecAddr;
     struct sockaddr_in mAddr;
+    vector<int> mVecSockfd;
 
     std::mutex mMtxModify;
 };
@@ -71,6 +72,7 @@ public:
     ServerHelper(){}
     ServerHelper(int port):SocketHelper(port){}
     int listenAndReceive();
+    int listenAndReceive_test();
 
     int bindCallback(RecordEventData* r);
 private:

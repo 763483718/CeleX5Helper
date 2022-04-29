@@ -179,6 +179,12 @@ EventHelper_SOURCE_DIR:STATIC=/home/tuto/code/CeleX5Helper
 //The directory containing a CMake configuration file for OpenCV.
 OpenCV_DIR:PATH=/usr/local/share/OpenCV
 
+//Value Computed by CMake
+Project_BINARY_DIR:STATIC=/home/tuto/code/CeleX5Helper/build
+
+//Value Computed by CMake
+Project_SOURCE_DIR:STATIC=/home/tuto/code/CeleX5Helper
+
 
 ########################
 # INTERNAL cache entries

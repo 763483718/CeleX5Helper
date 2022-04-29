@@ -60,6 +60,80 @@ CMAKE_SOURCE_DIR = /home/tuto/code/CeleX5Helper
 CMAKE_BINARY_DIR = /home/tuto/code/CeleX5Helper/build
 
 #=============================================================================
+# Target rules for target CMakeFiles/testMaster.dir
+
+# All Build rule for target.
+CMakeFiles/testMaster.dir/all:
+	$(MAKE) -f CMakeFiles/testMaster.dir/build.make CMakeFiles/testMaster.dir/depend
+	$(MAKE) -f CMakeFiles/testMaster.dir/build.make CMakeFiles/testMaster.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/tuto/code/CeleX5Helper/build/CMakeFiles --progress-num=17,18,19,20,21 "Built target testMaster"
+.PHONY : CMakeFiles/testMaster.dir/all
+
+# Include target in all.
+all: CMakeFiles/testMaster.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/testMaster.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tuto/code/CeleX5Helper/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/testMaster.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tuto/code/CeleX5Helper/build/CMakeFiles 0
+.PHONY : CMakeFiles/testMaster.dir/rule
+
+# Convenience name for target.
+testMaster: CMakeFiles/testMaster.dir/rule
+
+.PHONY : testMaster
+
+# clean rule for target.
+CMakeFiles/testMaster.dir/clean:
+	$(MAKE) -f CMakeFiles/testMaster.dir/build.make CMakeFiles/testMaster.dir/clean
+.PHONY : CMakeFiles/testMaster.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/testMaster.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/testSlave.dir
+
+# All Build rule for target.
+CMakeFiles/testSlave.dir/all:
+	$(MAKE) -f CMakeFiles/testSlave.dir/build.make CMakeFiles/testSlave.dir/depend
+	$(MAKE) -f CMakeFiles/testSlave.dir/build.make CMakeFiles/testSlave.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/tuto/code/CeleX5Helper/build/CMakeFiles --progress-num=22,23,24,25,26 "Built target testSlave"
+.PHONY : CMakeFiles/testSlave.dir/all
+
+# Include target in all.
+all: CMakeFiles/testSlave.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/testSlave.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tuto/code/CeleX5Helper/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/testSlave.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tuto/code/CeleX5Helper/build/CMakeFiles 0
+.PHONY : CMakeFiles/testSlave.dir/rule
+
+# Convenience name for target.
+testSlave: CMakeFiles/testSlave.dir/rule
+
+.PHONY : testSlave
+
+# clean rule for target.
+CMakeFiles/testSlave.dir/clean:
+	$(MAKE) -f CMakeFiles/testSlave.dir/build.make CMakeFiles/testSlave.dir/clean
+.PHONY : CMakeFiles/testSlave.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/testSlave.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/BinHelper.dir
 
 # All Build rule for target.

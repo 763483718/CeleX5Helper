@@ -48,6 +48,8 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/testMaster.dir/DependInfo.cmake"
+  "CMakeFiles/testSlave.dir/DependInfo.cmake"
   "CMakeFiles/BinHelper.dir/DependInfo.cmake"
   "CMakeFiles/EventHelper.dir/DependInfo.cmake"
   "CMakeFiles/Master.dir/DependInfo.cmake"
