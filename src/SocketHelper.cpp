@@ -173,13 +173,17 @@ int ServerHelper::listenAndReceive()
         {
             printf("iret=%d\n",iret); break;  
         }
+        //cout <<"buffer:\t"<< string(buffer) << endl;
+        string buf(buffer);
         if(buffer[0] == 'b')
         {
-            char actionNo[2];
-            char personNo[2];
-            memcpy(actionNo, &(buffer[1]), 2);
-            memcpy(personNo, &(buffer[3]), 2);
-            pRecordEventData->takeAVideo(atoi(actionNo), atoi(personNo));
+            string actionNo;
+            string personNo;
+            actionNo = buf.substr(1,2);
+            personNo = buf.substr(3,2);
+            //memcpy(actionNo, &(buffer[1]), 2);
+            //memcpy(personNo, &(buffer[3]), 2);
+            pRecordEventData->takeAVideo(atoi(actionNo.c_str()), atoi(personNo.c_str()));
         }else if(buffer[0] == 'e')
         {
             pRecordEventData->StopRecord();
