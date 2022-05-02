@@ -5,7 +5,7 @@ add_definitions(-std=c++11)
 
 find_package(OpenCV 3.3 REQUIRED)
 
-
+set(link_libs dl  pthread  )
 set(CeleX_LIB CeleX)
 set(CeleX_CeleDriver_LIB CeleDriver)
 set(CeleXStereo_LIB CeleXStereo)
@@ -26,13 +26,13 @@ link_directories(./lib)
 #=================bin2txt
 add_executable(BinHelper ./src/bin2txt.cpp)
 
-target_link_libraries(BinHelper ${CeleX_LIB} ${OpenCV_LIBS})
+target_link_libraries(BinHelper ${CeleX_LIB} ${OpenCV_LIBS} ${link_libs})
 
 
 #=================RecordEventData
-add_executable(EventHelper ./src/main.cpp ./src/RecordEventData.cpp ./src/fileHelper.cpp)
+add_executable(EventHelper ./src/main.cpp ./src/RecordEventData.cpp ./src/fileHelper.cpp ./src/thread.cpp)
 
-target_link_libraries(EventHelper ${CeleX_LIB} ${OpenCV_LIBS})
+target_link_libraries(EventHelper ${CeleX_LIB} ${OpenCV_LIBS} ${link_libs})
 
 
 # #=================RecordEventData-Stereo             支持双事件相机的CeleX5库还未修改成功
@@ -44,18 +44,18 @@ target_link_libraries(EventHelper ${CeleX_LIB} ${OpenCV_LIBS})
 
 
 #=================main-Master
-add_executable(Master ./src/main-Master.cpp ./src/SocketHelper.cpp ./src/RecordEventData.cpp ./src/fileHelper.cpp)
-target_link_libraries(Master ${CeleX_LIB} ${OpenCV_LIBS})
+add_executable(Master ./src/main-Master.cpp ./src/SocketHelper.cpp ./src/RecordEventData.cpp ./src/fileHelper.cpp ./src/thread.cpp)
+target_link_libraries(Master ${CeleX_LIB} ${OpenCV_LIBS} ${link_libs})
 
 
 #=================main-Slave
-add_executable(Slave ./src/main-Slave.cpp ./src/SocketHelper.cpp ./src/RecordEventData.cpp ./src/fileHelper.cpp)
-target_link_libraries(Slave ${CeleX_LIB} ${OpenCV_LIBS})
+add_executable(Slave ./src/main-Slave.cpp ./src/SocketHelper.cpp ./src/RecordEventData.cpp ./src/fileHelper.cpp ./src/thread.cpp)
+target_link_libraries(Slave ${CeleX_LIB} ${OpenCV_LIBS} ${link_libs})
 
 
 #=================test
-add_executable(testSlave ./src/test-Slave.cpp ./src/RecordEventData.cpp ./src/fileHelper.cpp ./src/SocketHelper.cpp)
-target_link_libraries(testSlave ${CeleX_LIB} ${OpenCV_LIBS})
+add_executable(testSlave ./src/test-Slave.cpp ./src/RecordEventData.cpp ./src/fileHelper.cpp ./src/SocketHelper.cpp ./src/thread.cpp)
+target_link_libraries(testSlave ${CeleX_LIB} ${OpenCV_LIBS} ${link_libs})
 
-add_executable(testMaster ./src/test-Master.cpp ./src/RecordEventData.cpp ./src/fileHelper.cpp ./src/SocketHelper.cpp)
-target_link_libraries(testMaster ${CeleX_LIB} ${OpenCV_LIBS})
+add_executable(testMaster ./src/test-Master.cpp ./src/RecordEventData.cpp ./src/fileHelper.cpp ./src/SocketHelper.cpp ./src/thread.cpp)
+target_link_libraries(testMaster ${CeleX_LIB} ${OpenCV_LIBS} ${link_libs})

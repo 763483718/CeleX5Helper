@@ -4,7 +4,7 @@
  * @Author: guanzhou
  * @Date: 2021-01-09 02:59:46
  * @LastEditors: guanzhou
- * @LastEditTime: 2022-04-25 23:54:29
+ * @LastEditTime: 2022-05-02 18:08:19
  */
 #include "RecordEventData.hpp"
 
@@ -35,8 +35,21 @@ RecordEventData::RecordEventData(const string fpnFile)
     cv::imshow("prompt", mR);
 }
 
+RecordEventData::~RecordEventData()
+{
+    close();
+    if(pCeleX5)
+    {
+        delete pCeleX5;
+    }
+}
+
 int RecordEventData::StartRecord(const string binFile)
 {
+    if(!pCeleX5)
+    {
+        return -1;
+    }
     if(pCeleX5->isLoopModeEnabled())
     {
         clog << __func__ << ":\nstart record in loop mode\n";
@@ -55,6 +68,10 @@ int RecordEventData::StartRecord(const string binFile)
 
 int RecordEventData::StopRecord()
 {
+    if(!pCeleX5)
+    {
+        return -1;
+    }
     pCeleX5->stopRecording();
     clog << __func__ << "\n";
 
@@ -66,19 +83,28 @@ int RecordEventData::StopRecord()
 
 int RecordEventData::setLoopMode()
 {
+    if(!pCeleX5)
+    {
+        return -1;
+    }
     pCeleX5->setLoopModeEnabled(true);
 
 	pCeleX5->setSensorLoopMode(CeleX5::Full_Picture_Mode, 1);
 	pCeleX5->setSensorLoopMode(CeleX5::Event_Intensity_Mode, 2);
 	pCeleX5->setSensorLoopMode(CeleX5::Optical_Flow_Mode, 3);
-    
+
     return State_OK;
 }
 
 int RecordEventData::setFixedMode()
 {
+    if(!pCeleX5)
+    {
+        return -1;
+    }
     pCeleX5->setLoopModeEnabled(false);
     pCeleX5->setSensorFixedMode(CeleX5::CeleX5Mode::Event_Intensity_Mode);
+
     return State_OK;
 }
 
@@ -132,4 +158,31 @@ int RecordEventData::process()
         beginProcess();
     }
     return State_OK;
+}
+
+void RecordEventData::showImages()
+{
+    if(!pCeleX5)
+    {
+        return;
+    }
+    // fpConnectionRunning();
+    start();
+}
+
+void RecordEventData::fpConnectionRunning()
+{
+    cout << "=============================start showImages\n";
+    while(m_isRunning)
+    {
+        auto img = pCeleX5->getEventPicMat(CeleX5::EventGrayPic);
+        cv::imshow("img", img);
+        cv::waitKey(30);
+    }
+    cout << "=============================end showImages\n";
+}
+
+int RecordEventData::close()
+{
+    m_isRunning = false;
 }

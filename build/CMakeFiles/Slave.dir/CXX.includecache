@@ -31,6 +31,8 @@ ctime
 .././include/RecordEventData.hpp
 ../include/CeleX/celex5/celex5.h
 .././include/CeleX/celex5/celex5.h
+thread.hpp
+.././include/thread.hpp
 comment.hpp
 .././include/comment.hpp
 string
@@ -96,6 +98,10 @@ sys/stat.h
 string
 -
 
+.././include/thread.hpp
+pthread.h
+-
+
 /home/tuto/code/CeleX5Helper/include/comment.hpp
 unistd.h
 -
@@ -145,6 +151,10 @@ SocketHelper.hpp
 /home/tuto/code/CeleX5Helper/include/comment.hpp
 RecordEventData.hpp
 /home/tuto/code/CeleX5Helper/src/RecordEventData.hpp
+
+/home/tuto/code/CeleX5Helper/src/thread.cpp
+thread.hpp
+/home/tuto/code/CeleX5Helper/src/thread.hpp
 
 /usr/local/include/opencv/cxcore.h
 opencv2/core/core_c.h

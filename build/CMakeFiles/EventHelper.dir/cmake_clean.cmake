@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/EventHelper.dir/src/main.cpp.o"
   "CMakeFiles/EventHelper.dir/src/RecordEventData.cpp.o"
   "CMakeFiles/EventHelper.dir/src/fileHelper.cpp.o"
+  "CMakeFiles/EventHelper.dir/src/thread.cpp.o"
   "EventHelper.pdb"
   "EventHelper"
 )

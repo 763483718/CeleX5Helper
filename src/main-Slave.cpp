@@ -5,7 +5,7 @@
  * @email: guanzhou.cn@gmail.com
  * @Date: 2022-04-20 23:13:40
  * @LastEditors: guanzhou
- * @LastEditTime: 2022-04-25 19:32:07
+ * @LastEditTime: 2022-05-02 18:02:47
  */
 
 
@@ -34,6 +34,10 @@ int main(int argc,char *argv[])
         record->setLoopMode();
     }
 
+    record->showImages();
+
+    cout << "=========-------------===========\n";
+    
     sv->bindCallback(record);
 
     sv->listenAndReceive();

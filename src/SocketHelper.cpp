@@ -5,7 +5,7 @@
  * @email: guanzhou.cn@gmail.com
  * @Date: 2022-04-20 23:13:06
  * @LastEditors: guanzhou
- * @LastEditTime: 2022-04-29 20:01:31
+ * @LastEditTime: 2022-05-01 20:40:59
  */
 
 #include "SocketHelper.hpp"
@@ -120,7 +120,7 @@ int ClientHelper::sendDataSerive(int sockfd, const char* buffer, int size)
     char recvBuff[128];
     if ( (iret=recv(sockfd,recvBuff,sizeof(recvBuff),0))<=0)
     {
-        printf("iret=%d\n",iret); 
+        printf("iret=%d\n", iret); 
         return -1;
     }
     printf("receive: %s\n",recvBuff);
@@ -129,7 +129,7 @@ int ClientHelper::sendDataSerive(int sockfd, const char* buffer, int size)
 
 int ServerHelper::listenAndReceive()
 {
-    mListenfd = socket(AF_INET,SOCK_STREAM,0);
+    mListenfd = socket(AF_INET, SOCK_STREAM, 0);
 
     if(mListenfd == -1)
     {

@@ -464,6 +464,45 @@ src/test-Slave.cpp.s:
 	$(MAKE) -f CMakeFiles/testSlave.dir/build.make CMakeFiles/testSlave.dir/src/test-Slave.cpp.s
 .PHONY : src/test-Slave.cpp.s
 
+src/thread.o: src/thread.cpp.o
+
+.PHONY : src/thread.o
+
+# target to build an object file
+src/thread.cpp.o:
+	$(MAKE) -f CMakeFiles/testMaster.dir/build.make CMakeFiles/testMaster.dir/src/thread.cpp.o
+	$(MAKE) -f CMakeFiles/testSlave.dir/build.make CMakeFiles/testSlave.dir/src/thread.cpp.o
+	$(MAKE) -f CMakeFiles/EventHelper.dir/build.make CMakeFiles/EventHelper.dir/src/thread.cpp.o
+	$(MAKE) -f CMakeFiles/Master.dir/build.make CMakeFiles/Master.dir/src/thread.cpp.o
+	$(MAKE) -f CMakeFiles/Slave.dir/build.make CMakeFiles/Slave.dir/src/thread.cpp.o
+.PHONY : src/thread.cpp.o
+
+src/thread.i: src/thread.cpp.i
+
+.PHONY : src/thread.i
+
+# target to preprocess a source file
+src/thread.cpp.i:
+	$(MAKE) -f CMakeFiles/testMaster.dir/build.make CMakeFiles/testMaster.dir/src/thread.cpp.i
+	$(MAKE) -f CMakeFiles/testSlave.dir/build.make CMakeFiles/testSlave.dir/src/thread.cpp.i
+	$(MAKE) -f CMakeFiles/EventHelper.dir/build.make CMakeFiles/EventHelper.dir/src/thread.cpp.i
+	$(MAKE) -f CMakeFiles/Master.dir/build.make CMakeFiles/Master.dir/src/thread.cpp.i
+	$(MAKE) -f CMakeFiles/Slave.dir/build.make CMakeFiles/Slave.dir/src/thread.cpp.i
+.PHONY : src/thread.cpp.i
+
+src/thread.s: src/thread.cpp.s
+
+.PHONY : src/thread.s
+
+# target to generate assembly for a file
+src/thread.cpp.s:
+	$(MAKE) -f CMakeFiles/testMaster.dir/build.make CMakeFiles/testMaster.dir/src/thread.cpp.s
+	$(MAKE) -f CMakeFiles/testSlave.dir/build.make CMakeFiles/testSlave.dir/src/thread.cpp.s
+	$(MAKE) -f CMakeFiles/EventHelper.dir/build.make CMakeFiles/EventHelper.dir/src/thread.cpp.s
+	$(MAKE) -f CMakeFiles/Master.dir/build.make CMakeFiles/Master.dir/src/thread.cpp.s
+	$(MAKE) -f CMakeFiles/Slave.dir/build.make CMakeFiles/Slave.dir/src/thread.cpp.s
+.PHONY : src/thread.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -505,6 +544,9 @@ help:
 	@echo "... src/test-Slave.o"
 	@echo "... src/test-Slave.i"
 	@echo "... src/test-Slave.s"
+	@echo "... src/thread.o"
+	@echo "... src/thread.i"
+	@echo "... src/thread.s"
 .PHONY : help
 
 

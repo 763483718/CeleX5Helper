@@ -6,6 +6,7 @@ CMakeFiles/Slave.dir/src/RecordEventData.cpp.o: .././include/CeleX/celextypes.h
 CMakeFiles/Slave.dir/src/RecordEventData.cpp.o: .././include/RecordEventData.hpp
 CMakeFiles/Slave.dir/src/RecordEventData.cpp.o: .././include/comment.hpp
 CMakeFiles/Slave.dir/src/RecordEventData.cpp.o: .././include/fileHelper.hpp
+CMakeFiles/Slave.dir/src/RecordEventData.cpp.o: .././include/thread.hpp
 CMakeFiles/Slave.dir/src/RecordEventData.cpp.o: ../src/RecordEventData.cpp
 CMakeFiles/Slave.dir/src/RecordEventData.cpp.o: /usr/local/include/opencv/cxcore.h
 CMakeFiles/Slave.dir/src/RecordEventData.cpp.o: /usr/local/include/opencv2/calib3d.hpp
@@ -140,6 +141,7 @@ CMakeFiles/Slave.dir/src/SocketHelper.cpp.o: .././include/RecordEventData.hpp
 CMakeFiles/Slave.dir/src/SocketHelper.cpp.o: .././include/SocketHelper.hpp
 CMakeFiles/Slave.dir/src/SocketHelper.cpp.o: .././include/comment.hpp
 CMakeFiles/Slave.dir/src/SocketHelper.cpp.o: .././include/fileHelper.hpp
+CMakeFiles/Slave.dir/src/SocketHelper.cpp.o: .././include/thread.hpp
 CMakeFiles/Slave.dir/src/SocketHelper.cpp.o: ../src/SocketHelper.cpp
 CMakeFiles/Slave.dir/src/SocketHelper.cpp.o: /usr/local/include/opencv/cxcore.h
 CMakeFiles/Slave.dir/src/SocketHelper.cpp.o: /usr/local/include/opencv2/calib3d.hpp
@@ -276,6 +278,7 @@ CMakeFiles/Slave.dir/src/main-Slave.cpp.o: .././include/CeleX/celextypes.h
 CMakeFiles/Slave.dir/src/main-Slave.cpp.o: .././include/RecordEventData.hpp
 CMakeFiles/Slave.dir/src/main-Slave.cpp.o: .././include/SocketHelper.hpp
 CMakeFiles/Slave.dir/src/main-Slave.cpp.o: .././include/comment.hpp
+CMakeFiles/Slave.dir/src/main-Slave.cpp.o: .././include/thread.hpp
 CMakeFiles/Slave.dir/src/main-Slave.cpp.o: ../include/comment.hpp
 CMakeFiles/Slave.dir/src/main-Slave.cpp.o: ../include/fileHelper.hpp
 CMakeFiles/Slave.dir/src/main-Slave.cpp.o: ../src/main-Slave.cpp
@@ -405,4 +408,7 @@ CMakeFiles/Slave.dir/src/main-Slave.cpp.o: /usr/local/include/opencv2/viz/types.
 CMakeFiles/Slave.dir/src/main-Slave.cpp.o: /usr/local/include/opencv2/viz/viz3d.hpp
 CMakeFiles/Slave.dir/src/main-Slave.cpp.o: /usr/local/include/opencv2/viz/vizcore.hpp
 CMakeFiles/Slave.dir/src/main-Slave.cpp.o: /usr/local/include/opencv2/viz/widgets.hpp
+
+CMakeFiles/Slave.dir/src/thread.cpp.o: .././include/thread.hpp
+CMakeFiles/Slave.dir/src/thread.cpp.o: ../src/thread.cpp
 

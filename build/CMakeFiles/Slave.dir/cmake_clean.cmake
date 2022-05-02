@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Slave.dir/src/SocketHelper.cpp.o"
   "CMakeFiles/Slave.dir/src/RecordEventData.cpp.o"
   "CMakeFiles/Slave.dir/src/fileHelper.cpp.o"
+  "CMakeFiles/Slave.dir/src/thread.cpp.o"
   "Slave.pdb"
   "Slave"
 )

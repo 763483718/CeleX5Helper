@@ -5,12 +5,13 @@
  * @email: guanzhou.cn@gmail.com
  * @Date: 2022-03-28 20:50:08
  * @LastEditors: guanzhou
- * @LastEditTime: 2022-04-24 23:54:43
+ * @LastEditTime: 2022-05-02 17:30:45
  */
 #ifndef RECORD_EVENT_DATA
 #define RECORD_EVENT_DATA
 
 #include "../include/CeleX/celex5/celex5.h"
+#include "thread.hpp"
 #include "comment.hpp"
 #include <string>
 #include <vector>
@@ -22,10 +23,11 @@ using std::endl;
 using std::string;
 using std::vector;
 
-class RecordEventData
+class RecordEventData : public Thread
 {
 public:
     RecordEventData(const string fpnFile = "./FPN_2.txt");
+    ~RecordEventData();
 
     int StartRecord(const string binFile);
     int StopRecord();
@@ -36,14 +38,20 @@ public:
     int process();
 
     int takeAVideo(int actionNo, int personNo);
+
+    void showImages();
 public:
     CeleX5* pCeleX5;
 
 private:
     int beginProcess();
-    
+
+    int close();
+    void fpConnectionRunning();
+
 
 private:
+
     vector<string> vecCeleX5Mode;
 
     cv::Mat mR;
