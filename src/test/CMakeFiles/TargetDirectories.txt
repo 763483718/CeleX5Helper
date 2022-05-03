@@ -1,5 +1,0 @@
-/home/tuto/Event/recordEventData/src/test/CMakeFiles/rebuild_cache.dir
-/home/tuto/Event/recordEventData/src/test/CMakeFiles/edit_cache.dir
-/home/tuto/Event/recordEventData/src/test/CMakeFiles/py2cpp.dir
-/home/tuto/Event/recordEventData/src/test/pybind11/CMakeFiles/rebuild_cache.dir
-/home/tuto/Event/recordEventData/src/test/pybind11/CMakeFiles/edit_cache.dir
