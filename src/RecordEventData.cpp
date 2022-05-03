@@ -4,7 +4,7 @@
  * @Author: guanzhou
  * @Date: 2021-01-09 02:59:46
  * @LastEditors: guanzhou
- * @LastEditTime: 2022-05-02 18:08:19
+ * @LastEditTime: 2022-05-03 19:14:29
  */
 #include "RecordEventData.hpp"
 
@@ -32,7 +32,7 @@ RecordEventData::RecordEventData(const string fpnFile)
     // mG = cv::imread("../rosgraph.png");
     mR = cv::Mat(cv::Size(500,500),CV_8UC3,cv::Scalar(0,0,255));
     mG = cv::Mat(cv::Size(500,500),CV_8UC3,cv::Scalar(0,255,0));
-    cv::imshow("prompt", mR);
+    imgHelper.addImage("prompt", mR);
 }
 
 RecordEventData::~RecordEventData()
@@ -75,8 +75,7 @@ int RecordEventData::StopRecord()
     pCeleX5->stopRecording();
     clog << __func__ << "\n";
 
-    cv::imshow("prompt", mR);
-    cv::waitKey(30);
+    imgHelper.addImage("prompt", mR);
 
     return State_OK;
 }
@@ -110,8 +109,7 @@ int RecordEventData::setFixedMode()
 
 int RecordEventData::beginProcess()
 {
-    cv::imshow("prompt",mR);
-    cv::waitKey(30);
+    imgHelper.addImage("prompt", mR);
     return State_OK;
 }
 
@@ -140,10 +138,9 @@ int RecordEventData::takeAVideo(int actionNo, int personNo)
     int size = getFiles(path, files);
     path += std::to_string(size) + ".bin";
     
-    cv::imshow("prompt",mG);
+    imgHelper.addImage("prompt", mG);
     StartRecord(path);
-    cv::waitKey(30);
-    // StopRecord();
+
     
     return State_OK;
 }
@@ -167,19 +164,23 @@ void RecordEventData::showImages()
         return;
     }
     // fpConnectionRunning();
+    imgHelper.start();
     start();
 }
 
 void RecordEventData::fpConnectionRunning()
 {
-    cout << "=============================start showImages\n";
+    cout << __func__ << "=============================start showImages\n";
     while(m_isRunning)
     {
         auto img = pCeleX5->getEventPicMat(CeleX5::EventGrayPic);
-        cv::imshow("img", img);
-        cv::waitKey(30);
+        if(!img.empty())
+        {
+            imgHelper.addImage("img", img);
+        }
+        usleep(30 * 1000);
     }
-    cout << "=============================end showImages\n";
+    cout << __func__ << "=============================end showImages\n";
 }
 
 int RecordEventData::close()

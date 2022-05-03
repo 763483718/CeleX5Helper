@@ -30,7 +30,7 @@ target_link_libraries(BinHelper ${CeleX_LIB} ${OpenCV_LIBS} ${link_libs})
 
 
 #=================RecordEventData
-add_executable(EventHelper ./src/main.cpp ./src/RecordEventData.cpp ./src/fileHelper.cpp ./src/thread.cpp)
+add_executable(EventHelper ./src/main.cpp ./src/RecordEventData.cpp ./src/fileHelper.cpp ./src/thread.cpp ./src/imshowHelper.cpp)
 
 target_link_libraries(EventHelper ${CeleX_LIB} ${OpenCV_LIBS} ${link_libs})
 
@@ -44,18 +44,18 @@ target_link_libraries(EventHelper ${CeleX_LIB} ${OpenCV_LIBS} ${link_libs})
 
 
 #=================main-Master
-add_executable(Master ./src/main-Master.cpp ./src/SocketHelper.cpp ./src/RecordEventData.cpp ./src/fileHelper.cpp ./src/thread.cpp)
+add_executable(Master ./src/main-Master.cpp ./src/SocketHelper.cpp ./src/RecordEventData.cpp ./src/fileHelper.cpp ./src/thread.cpp ./src/imshowHelper.cpp)
 target_link_libraries(Master ${CeleX_LIB} ${OpenCV_LIBS} ${link_libs})
 
 
 #=================main-Slave
-add_executable(Slave ./src/main-Slave.cpp ./src/SocketHelper.cpp ./src/RecordEventData.cpp ./src/fileHelper.cpp ./src/thread.cpp)
+add_executable(Slave ./src/main-Slave.cpp ./src/SocketHelper.cpp ./src/RecordEventData.cpp ./src/fileHelper.cpp ./src/thread.cpp ./src/imshowHelper.cpp)
 target_link_libraries(Slave ${CeleX_LIB} ${OpenCV_LIBS} ${link_libs})
 
 
 #=================test
-add_executable(testSlave ./src/test-Slave.cpp ./src/RecordEventData.cpp ./src/fileHelper.cpp ./src/SocketHelper.cpp ./src/thread.cpp)
+add_executable(testSlave ./src/test-Slave.cpp ./src/RecordEventData.cpp ./src/fileHelper.cpp ./src/SocketHelper.cpp ./src/thread.cpp ./src/imshowHelper.cpp)
 target_link_libraries(testSlave ${CeleX_LIB} ${OpenCV_LIBS} ${link_libs})
 
-add_executable(testMaster ./src/test-Master.cpp ./src/RecordEventData.cpp ./src/fileHelper.cpp ./src/SocketHelper.cpp ./src/thread.cpp)
+add_executable(testMaster ./src/test-Master.cpp ./src/RecordEventData.cpp ./src/fileHelper.cpp ./src/SocketHelper.cpp ./src/thread.cpp ./src/imshowHelper.cpp)
 target_link_libraries(testMaster ${CeleX_LIB} ${OpenCV_LIBS} ${link_libs})

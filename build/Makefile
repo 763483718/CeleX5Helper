@@ -329,6 +329,45 @@ src/fileHelper.cpp.s:
 	$(MAKE) -f CMakeFiles/Slave.dir/build.make CMakeFiles/Slave.dir/src/fileHelper.cpp.s
 .PHONY : src/fileHelper.cpp.s
 
+src/imshowHelper.o: src/imshowHelper.cpp.o
+
+.PHONY : src/imshowHelper.o
+
+# target to build an object file
+src/imshowHelper.cpp.o:
+	$(MAKE) -f CMakeFiles/testMaster.dir/build.make CMakeFiles/testMaster.dir/src/imshowHelper.cpp.o
+	$(MAKE) -f CMakeFiles/testSlave.dir/build.make CMakeFiles/testSlave.dir/src/imshowHelper.cpp.o
+	$(MAKE) -f CMakeFiles/EventHelper.dir/build.make CMakeFiles/EventHelper.dir/src/imshowHelper.cpp.o
+	$(MAKE) -f CMakeFiles/Master.dir/build.make CMakeFiles/Master.dir/src/imshowHelper.cpp.o
+	$(MAKE) -f CMakeFiles/Slave.dir/build.make CMakeFiles/Slave.dir/src/imshowHelper.cpp.o
+.PHONY : src/imshowHelper.cpp.o
+
+src/imshowHelper.i: src/imshowHelper.cpp.i
+
+.PHONY : src/imshowHelper.i
+
+# target to preprocess a source file
+src/imshowHelper.cpp.i:
+	$(MAKE) -f CMakeFiles/testMaster.dir/build.make CMakeFiles/testMaster.dir/src/imshowHelper.cpp.i
+	$(MAKE) -f CMakeFiles/testSlave.dir/build.make CMakeFiles/testSlave.dir/src/imshowHelper.cpp.i
+	$(MAKE) -f CMakeFiles/EventHelper.dir/build.make CMakeFiles/EventHelper.dir/src/imshowHelper.cpp.i
+	$(MAKE) -f CMakeFiles/Master.dir/build.make CMakeFiles/Master.dir/src/imshowHelper.cpp.i
+	$(MAKE) -f CMakeFiles/Slave.dir/build.make CMakeFiles/Slave.dir/src/imshowHelper.cpp.i
+.PHONY : src/imshowHelper.cpp.i
+
+src/imshowHelper.s: src/imshowHelper.cpp.s
+
+.PHONY : src/imshowHelper.s
+
+# target to generate assembly for a file
+src/imshowHelper.cpp.s:
+	$(MAKE) -f CMakeFiles/testMaster.dir/build.make CMakeFiles/testMaster.dir/src/imshowHelper.cpp.s
+	$(MAKE) -f CMakeFiles/testSlave.dir/build.make CMakeFiles/testSlave.dir/src/imshowHelper.cpp.s
+	$(MAKE) -f CMakeFiles/EventHelper.dir/build.make CMakeFiles/EventHelper.dir/src/imshowHelper.cpp.s
+	$(MAKE) -f CMakeFiles/Master.dir/build.make CMakeFiles/Master.dir/src/imshowHelper.cpp.s
+	$(MAKE) -f CMakeFiles/Slave.dir/build.make CMakeFiles/Slave.dir/src/imshowHelper.cpp.s
+.PHONY : src/imshowHelper.cpp.s
+
 src/main-Master.o: src/main-Master.cpp.o
 
 .PHONY : src/main-Master.o
@@ -529,6 +568,9 @@ help:
 	@echo "... src/fileHelper.o"
 	@echo "... src/fileHelper.i"
 	@echo "... src/fileHelper.s"
+	@echo "... src/imshowHelper.o"
+	@echo "... src/imshowHelper.i"
+	@echo "... src/imshowHelper.s"
 	@echo "... src/main-Master.o"
 	@echo "... src/main-Master.i"
 	@echo "... src/main-Master.s"

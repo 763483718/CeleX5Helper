@@ -5,13 +5,14 @@
  * @email: guanzhou.cn@gmail.com
  * @Date: 2022-03-28 20:50:08
  * @LastEditors: guanzhou
- * @LastEditTime: 2022-05-02 17:30:45
+ * @LastEditTime: 2022-05-03 18:56:45
  */
 #ifndef RECORD_EVENT_DATA
 #define RECORD_EVENT_DATA
 
 #include "../include/CeleX/celex5/celex5.h"
 #include "thread.hpp"
+#include "imshowHelper.hpp"
 #include "comment.hpp"
 #include <string>
 #include <vector>
@@ -42,6 +43,7 @@ public:
     void showImages();
 public:
     CeleX5* pCeleX5;
+    imshowHelper imgHelper;
 
 private:
     int beginProcess();

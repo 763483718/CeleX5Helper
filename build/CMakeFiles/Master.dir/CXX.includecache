@@ -33,6 +33,8 @@ ctime
 .././include/CeleX/celex5/celex5.h
 thread.hpp
 .././include/thread.hpp
+imshowHelper.hpp
+.././include/imshowHelper.hpp
 comment.hpp
 .././include/comment.hpp
 string
@@ -98,6 +100,18 @@ sys/stat.h
 string
 -
 
+.././include/imshowHelper.hpp
+comment.hpp
+.././include/comment.hpp
+thread.hpp
+.././include/thread.hpp
+unordered_map
+-
+vector
+-
+mutex
+-
+
 .././include/thread.hpp
 pthread.h
 -
@@ -113,6 +127,10 @@ SocketHelper.hpp
 /home/tuto/code/CeleX5Helper/src/fileHelper.cpp
 fileHelper.hpp
 /home/tuto/code/CeleX5Helper/src/fileHelper.hpp
+
+/home/tuto/code/CeleX5Helper/src/imshowHelper.cpp
+imshowHelper.hpp
+/home/tuto/code/CeleX5Helper/src/imshowHelper.hpp
 
 /home/tuto/code/CeleX5Helper/src/main-Master.cpp
 iostream

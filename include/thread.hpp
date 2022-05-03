@@ -5,8 +5,11 @@
  * @email: guanzhou.cn@gmail.com
  * @Date: 2022-05-02 15:24:27
  * @LastEditors: guanzhou
- * @LastEditTime: 2022-05-02 17:56:02
+ * @LastEditTime: 2022-05-03 19:01:43
  */
+#ifndef THREAD_HPP
+#define THREAD_HPP
+
 #include <pthread.h> 
 
 class Thread
@@ -30,3 +33,5 @@ private:
 protected:
     bool m_isRunning;
 };
+
+#endif

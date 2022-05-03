@@ -5,7 +5,7 @@
  * @email: guanzhou.cn@gmail.com
  * @Date: 2022-04-20 23:13:40
  * @LastEditors: guanzhou
- * @LastEditTime: 2022-05-02 18:02:47
+ * @LastEditTime: 2022-05-03 19:14:48
  */
 
 
@@ -19,9 +19,9 @@ using namespace std;
 
 int main(int argc,char *argv[])
 {
-    int port;
-    cout << "please input port\n";
-    cin >> port;
+    int port = 8081;
+    // cout << "please input port\n";
+    // cin >> port;
     ServerHelper* sv = new ServerHelper(port);
 
     RecordEventData *record = new RecordEventData("../FPN_2.txt");
@@ -36,8 +36,6 @@ int main(int argc,char *argv[])
 
     record->showImages();
 
-    cout << "=========-------------===========\n";
-    
     sv->bindCallback(record);
 
     sv->listenAndReceive();

@@ -5,7 +5,7 @@
  * @email: guanzhou.cn@gmail.com
  * @Date: 2022-04-20 23:13:28
  * @LastEditors: guanzhou
- * @LastEditTime: 2022-04-29 22:08:45
+ * @LastEditTime: 2022-05-03 19:15:14
  */
 #include <iostream>
 #include <string>
@@ -13,9 +13,9 @@
 using namespace std;
 int main(int argc,char *argv[])
 {
-    string ip;int port;
-    cout << "please input ip and port\n";
-    cin >> ip >> port;
+    string ip = "10.12.41.81";int port = 8081;
+    // cout << "please input ip and port\n";
+    // cin >> ip >> port;
     
     ClientHelper* client = new ClientHelper();
     int fd1 = client->connection(ip, port);
