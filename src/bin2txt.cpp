@@ -13,19 +13,9 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-#include <iostream>
-#include <fstream>
 
-#include <opencv2/opencv.hpp>
-#include "celex5.h"
-#include "celex5datamanager.h"
-#include "celex5processeddata.h"
 
-#ifdef _WIN32
-#include <windows.h>
-#else
-#include<unistd.h>
-#endif
+#include "bin2txt.hpp"
 
 #define FPN_PATH    "../Samples/config/FPN_2.txt"
 //#define BIN_FILE    "YOUR_BIN_FILE_PATH.bin"	//your bin file path
@@ -33,33 +23,7 @@
 
 CeleX5 *pCeleX5 = new CeleX5;
 
-class SensorDataObserver : public CeleX5DataManager
-{
-public:
-	SensorDataObserver(CX5SensorDataServer* pServer)
-	{
-        tick = 0;
-        fOut.open("/home/tuto/code/CeleX5Helper/bin/test.txt", std::ios::trunc | std::ios::in);
 
-		m_pServer = pServer;
-		m_pServer->registerData(this, CeleX5DataManager::CeleX_Frame_Data);
-	}
-	~SensorDataObserver()
-	{
-
-        fOut.close();
-
-		m_pServer->unregisterData(this, CeleX5DataManager::CeleX_Frame_Data);
-	}
-	virtual void onFrameDataUpdated(CeleX5ProcessedData* pSensorData);//overrides Observer operation
-
-	CX5SensorDataServer* m_pServer;
-
-
-private:
-    std::ofstream fOut;
-    unsigned int tick;
-};
 
 uint8_t * pImageBuffer = new uint8_t[CELEX5_PIXELS_NUMBER];
 void SensorDataObserver::onFrameDataUpdated(CeleX5ProcessedData* pSensorData)
@@ -69,6 +33,7 @@ void SensorDataObserver::onFrameDataUpdated(CeleX5ProcessedData* pSensorData)
 	CeleX5::CeleX5Mode sensorMode = pSensorData->getSensorMode();
 	if (CeleX5::Full_Picture_Mode == sensorMode)
 	{
+        return;
 		//full-frame picture
 		pCeleX5->getFullPicBuffer(pImageBuffer);
 		cv::Mat matFullPic(800, 1280, CV_8UC1, pImageBuffer);
@@ -78,6 +43,7 @@ void SensorDataObserver::onFrameDataUpdated(CeleX5ProcessedData* pSensorData)
 	else if (CeleX5::Event_Off_Pixel_Timestamp_Mode == sensorMode)
 	{
 		//get buffers when sensor works in EventMode
+        return;
 		pCeleX5->getEventPicBuffer(pImageBuffer, CeleX5::EventBinaryPic);
 		cv::Mat matEventPic(800, 1280, CV_8UC1, pImageBuffer);
 		cv::imshow("Event Binary Pic", matEventPic);
@@ -86,6 +52,7 @@ void SensorDataObserver::onFrameDataUpdated(CeleX5ProcessedData* pSensorData)
 	else if (CeleX5::Optical_Flow_Mode == sensorMode)
 	{
 		//full-frame optical-flow pic
+        return;
 		pCeleX5->getOpticalFlowPicBuffer(pImageBuffer, CeleX5::OpticalFlowPic);
 		cv::Mat matOpticalFlow(800, 1280, CV_8UC1, pImageBuffer);
 		cv::imshow("Optical-Flow Pic", matOpticalFlow);
@@ -93,17 +60,15 @@ void SensorDataObserver::onFrameDataUpdated(CeleX5ProcessedData* pSensorData)
 	}
     else if (CeleX5::Event_Intensity_Mode == sensorMode)
 	{
-
         std::vector<EventData> vecEvent;
         pCeleX5->getEventDataVector(vecEvent);
         for(auto event : vecEvent)
         {
-            
             if(event.col + 1 <= 240 || event.col + 1 > 1040)
             {
                 continue;
             }
-
+            mFlag = true;
             fOut << tick + event.tOffPixelIncreasing;//tOffPixelIncreasing;
             fOut << " ";
             fOut << (event.row) ;
@@ -125,16 +90,34 @@ void SensorDataObserver::onFrameDataUpdated(CeleX5ProcessedData* pSensorData)
 	}
 }
 
-int main()
+int SensorDataObserver::opentxt(string path)
 {
-	if (pCeleX5 == NULL)
-		return 0;
-	//pCeleX5->openSensor(CeleX5::CeleX5_MIPI);
-	bool success = pCeleX5->openBinFile(BIN_FILE);	//open the bin file
+    closetxt();
+    fOut.open(path, std::ios::trunc | std::ios::in);
+    return true;
+}
+
+int SensorDataObserver::closetxt()
+{
+    if(fOut.is_open())
+    {
+        fOut.close();
+    }
+    if(mFlag)
+    {
+        mFlag = false;
+        return true;
+    }
+    return false;
+}
+
+void read(string binFile)
+{
+    //pCeleX5->openSensor(CeleX5::CeleX5_MIPI);
+	bool success = pCeleX5->openBinFile(binFile);	//open the bin file
 	// CeleX5::CeleX5Mode sensorMode = (CeleX5::CeleX5Mode)pCeleX5->getBinFileAttributes().loopBMode;
 
-	SensorDataObserver* pSensorData = new SensorDataObserver(pCeleX5->getSensorDataServer());
-    
+
     PlaybackState state;
 	while (true)
 	{
@@ -143,15 +126,82 @@ int main()
 			pCeleX5->readBinFileData();	//start reading the bin file
             state = pCeleX5->getPlaybackState();
 		}
-#ifdef _WIN32
+        #ifdef _WIN32
 		Sleep(1);
-#else
+        #else
         if(PlayFinished == state)
         {
             break;
         }
 		usleep(1000);
-#endif
+        #endif
 	}
+}
+
+int main()
+{
+	if (pCeleX5 == NULL)
+		return 0;
+
+	SensorDataObserver* pSensorData = new SensorDataObserver(pCeleX5->getSensorDataServer());
+    
+
+    // string path = "/home/server/Desktop/cgz/CeleX5Helper/bin/dataset/";
+    // string path = "/home/tuto/code/CeleX5Helper/bin/dataset";
+    string path = "../bin/dataset";
+    vector<string> filenames, actFolderNames;
+    vector<string> nullvec;
+    getFiles(path, nullvec, actFolderNames);
+    
+    string actPath;
+    vector<string> personFolderNames;
+    
+    
+    for(auto &actName : actFolderNames)
+    {
+        int count = 0;
+        string txtFolder = path + "txt/";
+        txtFolder += actName;
+        txtFolder += "/";
+        makeFolder(txtFolder);
+
+
+        actPath = path;
+        actPath += "/";
+        actPath += actName;
+
+        string personPath;
+        getFiles(actPath, nullvec, personFolderNames);
+        for(auto &personName : personFolderNames)
+        {
+            personPath = actPath;
+            personPath += "/";
+            personPath += personName;
+
+            filenames.clear();
+            string itemPath;
+            getFiles(personPath, filenames, nullvec);
+            for(auto &itemName : filenames)
+            {
+                itemPath = personPath;
+                itemPath += "/";
+                itemPath += itemName;
+                
+                
+                if(pSensorData->closetxt())
+                {
+                    ++count;
+                }
+                string txtfile = txtFolder + std::to_string(count) + ".txt";
+                pSensorData->opentxt(txtfile);
+
+                read(itemPath);
+            }
+        }
+
+    }
+
+
+
 	return 1;
 }

@@ -5,7 +5,7 @@ Autor: guanzhou
 email: guanzhou.cn@gmail.com
 Date: 2022-03-29 00:26:32
 LastEditors: guanzhou
-LastEditTime: 2022-05-01 15:56:24
+LastEditTime: 2022-05-07 20:42:27
 '''
 from PIL import Image
 import os
@@ -18,7 +18,7 @@ def deleteFolder(folder = './img'):
     print('=='*30)
     pass
 
-def showImg(filePath, ticksPerFrame = 400000, size = 128): #40000  40000000
+def showImg(filePath, ticksPerFrame = 40000, size = 128): #40000  40000000
     beginTick = 0
     countPic = 0
     img = Image.new('RGB',(size,size),(0,0,0))
@@ -51,5 +51,5 @@ def showImg(filePath, ticksPerFrame = 400000, size = 128): #40000  40000000
 if __name__ == '__main__':
     # deleteFolder()
     # showImg('/media/hdd0/guanzhou/data/DvsGesture/txt/1/100.txt')
-    showImg(r'../bin/test.txt',size = 800)
+    showImg(r'../bin/datasettxt/00/6.txt',size = 800)
     pass

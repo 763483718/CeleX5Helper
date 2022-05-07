@@ -5,7 +5,7 @@
  * @email: guanzhou.cn@gmail.com
  * @Date: 2022-04-07 14:21:05
  * @LastEditors: guanzhou
- * @LastEditTime: 2022-04-07 15:34:36
+ * @LastEditTime: 2022-05-06 21:49:06
  */
 
 #include <iostream>
@@ -28,3 +28,5 @@ using namespace std;
 int makeFolder(string file);
 
 int getFiles(std::string path, std::vector<std::string> &files);
+
+int getFiles(std::string path, std::vector<std::string> &files, std::vector<std::string> &folders);

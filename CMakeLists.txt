@@ -24,7 +24,7 @@ link_directories(./lib)
 # set_target_properties(EventHelper PROPERTIES OUTPUT_NAME ./build/EventHelper)
 
 #=================bin2txt
-add_executable(BinHelper ./src/bin2txt.cpp)
+add_executable(BinHelper ./src/bin2txt.cpp ./src/fileHelper.cpp)
 
 target_link_libraries(BinHelper ${CeleX_LIB} ${OpenCV_LIBS} ${link_libs})
 
