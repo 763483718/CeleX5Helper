@@ -5,7 +5,7 @@
  * @email: guanzhou.cn@gmail.com
  * @Date: 2022-04-05 23:12:15
  * @LastEditors: guanzhou
- * @LastEditTime: 2022-05-07 20:45:35
+ * @LastEditTime: 2022-05-08 16:05:29
  */
 #include <iostream>
 #include <fstream>
@@ -15,6 +15,8 @@
 #include "celex5datamanager.h"
 #include "celex5processeddata.h"
 #include "fileHelper.hpp"
+
+#include <algorithm>
 
 #ifdef _WIN32
 #include <windows.h>

@@ -93,6 +93,7 @@ void SensorDataObserver::onFrameDataUpdated(CeleX5ProcessedData* pSensorData)
 int SensorDataObserver::opentxt(string path)
 {
     closetxt();
+    cout << __func__ << path << "\t\t";
     fOut.open(path, std::ios::trunc | std::ios::in);
     return true;
 }
@@ -113,6 +114,7 @@ int SensorDataObserver::closetxt()
 
 void read(string binFile)
 {
+    cout << __func__ << ":\t" << binFile << endl;
     //pCeleX5->openSensor(CeleX5::CeleX5_MIPI);
 	bool success = pCeleX5->openBinFile(binFile);	//open the bin file
 	// CeleX5::CeleX5Mode sensorMode = (CeleX5::CeleX5Mode)pCeleX5->getBinFileAttributes().loopBMode;
@@ -153,10 +155,10 @@ int main()
     vector<string> nullvec;
     getFiles(path, nullvec, actFolderNames);
     
+    sort(actFolderNames.begin(), actFolderNames.end());
+
     string actPath;
     vector<string> personFolderNames;
-    
-    
     for(auto &actName : actFolderNames)
     {
         int count = 0;
@@ -171,7 +173,9 @@ int main()
         actPath += actName;
 
         string personPath;
+        personFolderNames.clear();
         getFiles(actPath, nullvec, personFolderNames);
+        sort(personFolderNames.begin(), personFolderNames.end());
         for(auto &personName : personFolderNames)
         {
             personPath = actPath;
@@ -186,7 +190,6 @@ int main()
                 itemPath = personPath;
                 itemPath += "/";
                 itemPath += itemName;
-                
                 
                 if(pSensorData->closetxt())
                 {
